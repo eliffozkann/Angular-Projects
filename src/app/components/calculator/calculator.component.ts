@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculatorComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log('yyy');
+
+  }
 
   ngOnInit(): void {
+    console.log('xxx');
+
   }
 
 }

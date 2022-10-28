@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,12 +13,15 @@ import { ProductListComponent } from './components/product-list/product-list.com
     AppComponent,
     CalculatorComponent,
     ListviewComponent,
-    ProductListComponent
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    FormsModule,
+    ReactiveFormsModule
   ],
+  exports:[],
   providers: [],
   bootstrap: [AppComponent]
 })

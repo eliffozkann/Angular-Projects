@@ -1,1 +1,13 @@
-<p>product-list works!</p>
+ <ul>
+    <li *ngFor="let customer of product">
+        {{customer}} 
+        <button (click)="delete(customer)">Delete</button>
+    </li>
+</ul>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+    <label for="name">Name: </label>
+    <input id="name" type="text" formControlName="name">
+    <button type="submit">Submit</button>
+
+</form>

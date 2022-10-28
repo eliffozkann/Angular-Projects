@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listview.component.css']
 })
 export class ListviewComponent implements OnInit {
+  categories: string[] = [];
+  language: string = 'en';
 
   constructor() { }
 
   ngOnInit(): void {
+    this.getCategories();
   }
 
+  getCategories() {
+    this.categories = ['Gi', 'Ayakkabı', 'Parfüm', 'Yiyecek', 'İçecek'];
+  }
 }
