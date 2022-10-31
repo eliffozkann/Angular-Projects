@@ -22,4 +22,14 @@ Verilerin kaybına sebebiyet verdiği için pek tercih edilmez.
 
 -- HEAD: GET metoduyla benzer göreve sahiptir ancak geri dönen yanıtta mesaj gövdesi bulunmaz (başlıklar ve içerikleri GET metoduyla aynıdır). 
 Bu nedenle GET mesajı gönderilmeden önce bir kaynağın var olup olmadığını kontrol etmek için kullanılabilmektedir.
+
+-- CONNECT: Bir proxy sunucu üzerinden başka bir sunucuya bağlanmak ve proxy sunucuyu bir tünel gibi kullanmak için kullanılır.
+
+-- OPTIONS: Bu metod belli bir kaynak için kullanılabilecek HTTP metodlarını sunucudan sorgulamak için kullanılır.
+
+-- TRACE: Teşhis amaçlı kullanılan bir istektir. Sunucu bu metodla gelen istek mesajının içeriğini aynen yanıt gövdesinde geri göndermelidir. 
+Bu yöntemle sunucu ile istemci arasında bir vekil sunucu varsa bu sunucunun ve yaptığı değişikliklerin tespiti için kullanılır.
+
+-- SEARCH: Bir dizinin altındaki kaynakları sorgulamak için kullanılır.
+
 */
