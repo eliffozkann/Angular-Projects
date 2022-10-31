@@ -1,19 +1,87 @@
-<p>listview works!</p>
+<!-- <p>listview works!</p> -->
 <!-- directive -->
 <!-- ngFor -->
 <!-- ngIf -->
 
 <!--  Kategori ismi 3 haneden kısa ise yazılmasın! -->
-<ul>
-    <ng-template ngFor let-item [ngForOf]="categories">
-        <li *ngIf="item.length > 3">{{ item }}</li>
-    </ng-template>
+
+
+<br />
+<ul *ngIf="categories" class="list-group">
+  <ng-template ngFor let-item [ngForOf]="categories">
+    <li *ngIf="item.name.length > 3" class="list-group-item">
+      <button
+        (click)="update(item.id, item.name, item.description)"
+        type="button"
+        class="btn btn-outline-info btn-sm"
+      >
+        Düzenle
+      </button>
+      {{ item.id }} &nbsp;&nbsp; {{ item.name }} &nbsp;---&nbsp;
+      {{ item.description }}
+    </li>
+  </ng-template>
 </ul>
 
-<ng-container *ngIf="language == 'tr'; else enMessage">
-    <div>Merhaba</div>
+<!-- <ng-container *ngIf="language == 'tr'; else enMessage">
+  <div>Merhaba</div>
 </ng-container>
 
 <ng-template #enMessage>
-    <div>Hello</div>
-</ng-template>
+  <div>Hello</div>
+</ng-template> -->
+<br><br>
+
+<!-- Reactive Form -->
+<!-- ADD FORM -->
+
+<form *ngIf="dataLoaded == true" [formGroup]="categoryAddForm" (submit)="add()">
+  <h1>Form - Add</h1>
+  <p>{{ error }}</p>
+  <input formControlName="name" type="text" placeholder="Enter name" /> &nbsp;
+  <input
+    formControlName="description"
+    type="text"
+    placeholder="Enter description"
+  />
+  &nbsp;
+  <button type="submit" class="btn btn-success btn-sm">Add</button> &nbsp;
+  <button type="reset" class="btn btn-primary btn-sm">Reset</button>
+</form>
+
+
+<!-- Update FORM -->
+<form
+  *ngIf="dataLoaded == false"
+  [formGroup]="categoryAddForm"
+  (submit)="update(categoryIdToUpdate, categoryNameToUpdate, categoryDescriptionToUpdate)"
+>
+  <h1>Form - Update - {{categoryIdToUpdate}}</h1>
+  <p>{{ error }}</p>
+  <input
+    formControlName="name"
+    type="text"
+    value={{categoryNameToUpdate}}
+  />
+  &nbsp;
+  <input
+    formControlName="description"
+    type="text"
+    value={{categoryDescriptionToUpdate}}
+  />
+  &nbsp;
+  <button type="submit" class="btn btn-success btn-sm">
+    Update
+  </button>
+  &nbsp;
+</form>
+
+<br /><br/>
+
+<!-- ngModel Form -->
+<h1>Form - Delete</h1>
+Silecek olan id: {{ categoryIdToDelete }}
+<div>
+  <input type="text" placeholder="id" [(ngModel)]="categoryIdToDelete" /> &nbsp;
+  <button (click)="delete()" class="btn btn-danger btn-sm">Delete</button>
+</div>
