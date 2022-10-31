@@ -88,11 +88,9 @@ export class ListviewComponent implements OnInit {
     };
     this.categoriesService.add(category).subscribe((response) => {
       console.info('Category has added');
+      this.categoryAddForm.reset();
       this.getCategories();
     });
-
-    this.dataLoaded = true;
-    this.createCategoryAddForm();
   }
 
   update(id: number, name: string, description: string): void {
@@ -116,11 +114,10 @@ export class ListviewComponent implements OnInit {
     };
     this.categoriesService.update(category).subscribe((response) => {
       console.info(response);
+      this.categoryAddForm.reset();
       this.getCategories();
     });
-
     this.dataLoaded = true;
-    this.createCategoryAddForm();
   }
 
 
