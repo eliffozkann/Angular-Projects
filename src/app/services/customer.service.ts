@@ -1,10 +1,10 @@
 import { AppStoreState } from '../store/app.state';
-import { Customer } from '../model/customer';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
+import { Customer } from '../models/customer';
 
 @Injectable({
   providedIn: 'root',

@@ -1,0 +1,131 @@
+<body class="p-3 m-0 border-0 bd-example">
+  <div class="container">
+    <h2 class="pb-2 border-bottom">Select Customer Type</h2>
+
+    <div class="form-check" (click)="changeCustomerType(true)">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="flexRadioDefault"
+        id="flexRadioDefault1"
+      />
+      <label class="form-check-label" for="flexRadioDefault1">
+        Corporate Customer
+      </label>
+    </div>
+    <div class="form-check" (click)="changeCustomerType(false)">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="flexRadioDefault"
+        id="flexRadioDefault2"
+        checked
+      />
+      <label class="form-check-label" for="flexRadioDefault2">
+        Individual Customer
+      </label>
+    </div>
+
+    <br />
+    <br />
+
+    <ng-container *ngIf="!selectCustomerType">
+      <h3>Create Individual Customer</h3>
+      <div class="input-group mb-3">
+        <form [formGroup]="createIndividualCustomer">
+          <!-- <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Customer Id</span>
+        <input type="text" class="form-control" formControlName="customerId" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div> -->
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+              >First Name</span
+            >
+            <input
+              type="text"
+              class="form-control"
+              formControlName="firstName"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+              >Last Name</span
+            >
+            <input
+              type="text"
+              class="form-control"
+              formControlName="lastName"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+              >National Id</span
+            >
+            <input
+              type="text"
+              class="form-control"
+              formControlName="nationalIdentity"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+            />
+          </div>
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="addIndivCustomer()"
+          >
+            Next
+          </button>
+        </form>
+      </div>
+    </ng-container>
+
+    <!-- ------- -->
+    <ng-container *ngIf="selectCustomerType">
+      <h3>Create Corporate Customer</h3>
+      <div class="input-group mb-3">
+        <form [formGroup]="createCorporateCustomer">
+          <!-- <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Customer Id</span>
+        <input type="text" class="form-control" formControlName="customerId" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div> -->
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+              >Company Name</span
+            >
+            <input
+              type="text"
+              class="form-control"
+              formControlName="companyName"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+              >Tax Number</span
+            >
+            <input
+              type="text"
+              class="form-control"
+              formControlName="taxNumber"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+            />
+          </div>
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="addCorpoCustomer()"
+          >
+            Next
+          </button>
+        </form>
+      </div>
+    </ng-container>
+  </div>
+</body>

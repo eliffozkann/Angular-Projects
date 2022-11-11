@@ -11,10 +11,25 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { CreateFakeArrayPipe } from './pipes/create-fake-array.pipe';
 import { SplitPipe } from './pipes/split.pipe';
-import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoadingOverlayComponent } from './components/loading-overlay/loading-overlay.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AppStoreState } from './store/app.state';
+import { TokenInterceptor } from './interceptors/token.interceptor';
+import { ToastrModule } from 'ngx-toastr';
+import { JwtModule } from '@auth0/angular-jwt';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { appReducers } from './store/app.reducer';
+import { AssignCatalogComponent } from './pages/assign-catalog/assign-catalog.component';
+import { CreateCustomerComponent } from './pages/create-customer/create-customer.component';
+import { CustomerComponent } from './pages/customer/customer.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { CustomerDetailComponent } from './pages/customer-detail/customer-detail.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SummaryComponent } from './pages/summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +39,17 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ProductListComponent,
     CreateFakeArrayPipe,
     SplitPipe,
-    LoginComponent,
     FooterComponent,
     LoadingOverlayComponent,
     NavbarComponent,
+    AssignCatalogComponent,
+    CreateCustomerComponent,
+    CustomerComponent,
+    FilterPipe,
+    CustomerDetailComponent,
+    HomepageComponent,
+    LoginComponent,
+    SummaryComponent,
   ],
   imports: [
     BrowserModule,

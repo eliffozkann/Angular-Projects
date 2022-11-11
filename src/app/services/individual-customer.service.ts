@@ -10,7 +10,7 @@ import { setIndivCustomerToRegister } from '../store/customerToRegister/customer
 @Injectable({
   providedIn: 'root',
 })
-export class IndividualCustomerServiceTsService {
+export class IndividualCustomerService {
   individualCustomerModel$!: Observable<IndividualCustomer | null>;
 
   private controllerUrl = `${environment.apiUrl}/individualCustomers`;

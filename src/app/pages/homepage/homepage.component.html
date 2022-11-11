@@ -1,0 +1,107 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://getbootstrap.com/docs/5.2/assets/css/docs.css"
+    rel="stylesheet"
+  />
+  <title>Bootstrap Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="p-3 m-0 border-0 bd-example">
+  <div class="container">
+    <h1 class="pb-2 border-bottom">Services</h1>
+    <div class="left-div">
+      <ul class="list-group" *ngIf="services">
+        <ng-template ngFor let-item [ngForOf]="services">
+          <li class="list-group-item">
+            {{ item.id }} - {{ item.name }}
+            <ng-container *ngIf="!changeForm"
+              ><button
+                (click)="changeFormFunc(item.id)"
+                type="button"
+                class="btn btn-outline-info btn-sm float-end"
+              >
+                Update
+              </button>
+            </ng-container>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+
+  <!--Reactive Form-->
+  <!-- <div class="left"> -->
+
+  <div class="container">
+    <div class="right-div">
+      <ng-container *ngIf="changeForm; else elseTitle">
+        <h1>Service Update - {{ this.servicesIdToUpdate }}</h1>
+      </ng-container>
+
+      <ng-template #elseTitle>
+        <h2>Service Add</h2>
+      </ng-template>
+
+      <form [formGroup]="serviceAddForm">
+        <p>{{ error }}</p>
+        <input
+          size="15"
+          formControlName="name"
+          type="text"
+          class="form-control"
+          aria-label="Recipient's username with two button addons"
+        />
+      </form>
+      <br />
+      <div class="input-group">
+        <ng-container *ngIf="changeForm; else elseButton">
+          <button
+            (click)="update()"
+            class="btn btn-success btn-sm"
+            type="button"
+          >
+            Update
+          </button>
+          <button
+            (click)="changeFormFunc(0)"
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Cancel
+          </button>
+        </ng-container>
+
+        <ng-template #elseButton>
+          <button (click)="add()" class="btn btn-success btn-sm" type="button">
+            Add
+          </button>
+        </ng-template>
+      </div>
+      <br /><br /><br />
+      <!-- </div> -->
+
+      <!-- ngModel From-->
+      <h2>Service Delete {{ serviceIdToDelete }}</h2>
+      <div>
+        <input
+          size="15"
+          type="text"
+          class="form-control"
+          aria-label="Recipient's username with two button addons"
+          placeholder="Service id"
+          [(ngModel)]="serviceIdToDelete"
+        />
+        <br />
+        <button (click)="delete()" class="btn btn-danger btn-sm" type="button">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</body>

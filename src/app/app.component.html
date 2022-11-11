@@ -9,14 +9,6 @@
 <button (click)="btnClick()">Tıkla </button> -->
 <!-- <app-calculator></app-calculator> -->
 
-<div class="spinner-container" *ngIf="isLoading">
-  <div class="overlay show"></div>
-  <div class="spinner show">
-    <div class="loader"></div>
-    <p>Loading...</p>
-  </div>
-</div>
-
 <!-- 1-10 arası sayıları listeye yazdır.. -->
 <!-- <ul>
     <li *ngFor="let i of 10 | createFakeArray">{{ i }}</li>
@@ -28,5 +20,7 @@
 <app-listview> </app-listview> -->
 
 <!-- <app-product-list> </app-product-list> -->
-
-<app-login></app-login>
+<app-navbar></app-navbar>
+<app-loading-overlay></app-loading-overlay>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

@@ -1,11 +1,11 @@
 import { AppStoreState } from '../store/app.state';
-import { Catalog } from '../model/catalog';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
 import { setCatalogToRegister } from '../store/customerToRegister/customerToRegister.actions';
+import { Catalog } from '../models/catalog';
 
 @Injectable({
   providedIn: 'root',

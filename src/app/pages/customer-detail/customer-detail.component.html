@@ -1,0 +1,96 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://getbootstrap.com/docs/5.2/assets/css/docs.css"
+    rel="stylesheet"
+  />
+  <title>Bootstrap Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body class="p-3 m-0 border-0 bd-example">
+  <div class="container bootstrap snippets bootdeys">
+    <div class="row">
+      <div
+        class="col-md-4 col-sm-6 content-card"
+        *ngFor="let item of individualCustomer"
+      >
+        <div class="card-big-shadow">
+          <div
+            class="card card-just-text"
+            data-background="color"
+            data-color="blue"
+            data-radius="none"
+          >
+            <div class="content">
+              <h6 class="category">Individual Customer</h6>
+              <br />
+              <h4 class="title">
+                <a>{{ item.firstName }} {{ item.lastName }}</a>
+              </h4>
+              <p class="description">
+                National Identity : {{ item.nationalIdentity }}
+              </p>
+            </div>
+          </div>
+          <!-- end card -->
+        </div>
+      </div>
+      <div
+        class="col-md-4 col-sm-6 content-card"
+        *ngFor="let item2 of corporateCustomer"
+      >
+        <div class="card-big-shadow">
+          <div
+            class="card card-just-text"
+            data-background="color"
+            data-color="blue"
+            data-radius="none"
+          >
+            <div class="content">
+              <h6 class="category">Corporate Customer</h6>
+              <br />
+              <h4 class="title">
+                <a>{{ item2.companyName }}</a>
+              </h4>
+              <p class="description">Tax Number : {{ item2.taxNumber }}</p>
+            </div>
+          </div>
+          <!-- end card -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container bootstrap snippets bootdeys">
+    <div class="row">
+      <div
+        class="col-md-4 col-sm-6 content-card"
+        *ngFor="let item of subscription"
+      >
+        <div class="card-big-shadow">
+          <div
+            class="card card-just-text"
+            data-background="color"
+            data-color="purple"
+            data-radius="none"
+          >
+            <div class="content">
+              <h6 class="category">Subscriptions</h6>
+              <br />
+              <h4 class="title">
+                <a>Id : {{ item.id }}</a>
+              </h4>
+              <p class="description">Date : {{ item.dateStarted }}</p>
+            </div>
+          </div>
+          <!-- end card -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
