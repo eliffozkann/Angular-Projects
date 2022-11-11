@@ -1,8 +1,32 @@
-<h3>Merhaba Angular</h3>
-<!-- <h3>{{ title }}</h3> -->
+<!-- <h3>{{ "Merhaba Angular" | uppercase }}</h3> -->
+
+<!-- <h3>{{today | date:"dd-MM-yyyy"}}</h3>
+
+<h3>{{'Merhaba Angular' | split:","}}</h3>
+
+<h3>{{ title }}</h3> -->
 <!-- <h3> {{ sumOfNumbers(6, 5) }} </h3>
 <button (click)="btnClick()">Tıkla </button> -->
 <!-- <app-calculator></app-calculator> -->
-<app-listview> </app-listview>
+
+<div class="spinner-container" *ngIf="isLoading">
+  <div class="overlay show"></div>
+  <div class="spinner show">
+    <div class="loader"></div>
+    <p>Loading...</p>
+  </div>
+</div>
+
+<!-- 1-10 arası sayıları listeye yazdır.. -->
+<!-- <ul>
+    <li *ngFor="let i of 10 | createFakeArray">{{ i }}</li>
+  </ul>
+
+<button (click)="startLoading()"> Start Loading </button>
+<button>Stop Loading</button>
+
+<app-listview> </app-listview> -->
 
 <!-- <app-product-list> </app-product-list> -->
+
+<app-login></app-login>

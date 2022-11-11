@@ -1,25 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingService } from './services/loading.service';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-loading-overlay',
+  templateUrl: './loading-overlay.component.html',
+  styleUrls: ['./loading-overlay.component.css'],
 })
-export class AppComponent implements OnInit {
+export class LoadingOverlayComponent implements OnInit {
   isLoading: boolean = false;
-  today: Date = new Date();
+
   constructor(private loadingService: LoadingService) {}
 
   ngOnInit(): void {
     this.subscribeToLoading();
   }
-  title = 'telco-frontend';
 
   subscribeToLoading() {
     this.loadingService.isLoadingSubject.subscribe((isLoading) => {
       this.isLoading = isLoading;
-      console.log(`isLoadingDeğeri: ${isLoading}`);
+      console.log(`Is loading değeri: ${isLoading}`);
     });
   }
 
