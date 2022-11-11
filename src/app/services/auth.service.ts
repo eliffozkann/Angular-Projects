@@ -1,7 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Token } from '@angular/compiler';
 import { Injectable } from '@angular/core';
-import { LoginUser } from '../models/loginUser';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +7,7 @@ import { LoginUser } from '../models/loginUser';
 export class AuthService {
   constructor(private httpclient: HttpClient) {}
   path = 'http://localhost:3000/users/auth';
-  userToken:any;
+  userToken: any;
 
   // login(loginUser: LoginUser) {
   //   let headers = new HttpHeaders();

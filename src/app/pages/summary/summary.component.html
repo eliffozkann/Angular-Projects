@@ -1,1 +1,131 @@
-<p>summary works!</p>
+<br />
+<div class="container">
+  <h1 class="pb-2 border-bottom">Overview</h1>
+</div>
+<br /><br />
+
+<div class="container bootstrap snippets bootdeys" *ngIf="customerType == true">
+  <div class="row">
+    <div class="col-md-4 col-sm-6 content-card">
+      <div class="card-big-shadow">
+        <div
+          class="card card-just-text"
+          data-background="color"
+          data-color="blue"
+          data-radius="none"
+        >
+          <div class="content">
+            <h6 class="category">Individual Customer</h6>
+            <br />
+            <h4 class="title">
+              <a
+                >{{ individualCustomer.firstName }}
+                {{ individualCustomer.lastName }}</a
+              >
+            </h4>
+            <p class="description">
+              National Identity : {{ individualCustomer.nationalIdentity }}
+            </p>
+          </div>
+        </div>
+        <!-- end card -->
+      </div>
+    </div>
+
+    <div
+      class="col-md-4 col-sm-6 content-card"
+      *ngFor="let item of catalogRegisterModel"
+    >
+      <div class="card-big-shadow">
+        <div
+          class="card card-just-text"
+          data-background="color"
+          data-color="purple"
+          data-radius="none"
+        >
+          <div class="content">
+            <h6 class="category">Selected Catalog</h6>
+            <br />
+            <h4 class="title">
+              <a>{{ item.name }}</a>
+            </h4>
+            <p class="description">Price : {{ item.price }}</p>
+          </div>
+        </div>
+        <!-- end card -->
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-success"
+      (click)="addIndivCustomer()"
+      routerLink="/customers"
+    >
+      Save Details
+    </button>
+  </div>
+</div>
+
+<div
+  class="container bootstrap snippets bootdeys"
+  *ngIf="customerType == false"
+>
+  <div class="row">
+    <div class="col-md-4 col-sm-6 content-card">
+      <div class="card-big-shadow">
+        <div
+          class="card card-just-text"
+          data-background="color"
+          data-color="blue"
+          data-radius="none"
+        >
+          <div class="content">
+            <h6 class="category">Corporate Customer</h6>
+            <br />
+            <h4 class="title">
+              <a>{{ corporateCustomer.companyName }}</a>
+            </h4>
+            <p class="description">
+              Tax Number : {{ corporateCustomer.taxNumber }}
+            </p>
+          </div>
+        </div>
+        <!-- end card -->
+      </div>
+    </div>
+
+    <div
+      class="col-md-4 col-sm-6 content-card"
+      *ngFor="let item of catalogRegisterModel"
+    >
+      <div class="card-big-shadow">
+        <div
+          class="card card-just-text"
+          data-background="color"
+          data-color="purple"
+          data-radius="none"
+        >
+          <div class="content">
+            <h6 class="category">Selected Catalog</h6>
+            <br />
+            <h4 class="title">
+              <a>{{ item.name }}</a>
+            </h4>
+            <p class="description">Price : {{ item.price }}</p>
+          </div>
+        </div>
+        <!-- end card -->
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-success"
+      (click)="addCorpoCustomer()"
+      routerLink="/customers"
+    >
+      Save Details
+    </button>
+  </div>
+</div>
