@@ -37,12 +37,12 @@ To run this code with angular you have to download list of packages.
 
 ## Key Topics Used on This Project
 
-=>  CRUD Operations
-=> Reaktive Forms And Two Way Data binding
-=> Interceptors
-=> Guards
-=> Activated Route
-=> ngRx Library
+1. CRUD Operations
+2. Reaktive Forms And Two Way Data binding
+3. Interceptors
+4. Guards
+5. Activated Route
+6. ngRx Library
 
 ## Pages
 ![image](https://user-images.githubusercontent.com/111922323/201753687-0d15a63e-aea0-4354-a9ce-e73379785327.png)
