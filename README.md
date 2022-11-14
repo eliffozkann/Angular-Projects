@@ -30,10 +30,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Imports
 
 To run this code with angular you have to download list of packages.
-`npm install bootstrap`
-`npm i ngx-toastr`
-`npm i @auth0/angular-jwt`
-`ng add @ngrx/store@latest`
+1. `npm install bootstrap`
+2. `npm i ngx-toastr`
+3. `npm i @auth0/angular-jwt`
+4. `ng add @ngrx/store@latest`
 
 ## Key Topics Used on This Project
 
